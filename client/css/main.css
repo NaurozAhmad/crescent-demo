@@ -1,0 +1,19 @@
+#main {
+	margin-top: 20px;
+}
+#map-canvas {
+	margin-top: 10px;
+}
+ul {
+	list-style: none;
+	font-size: 22px;
+	padding-left: 0;
+}
+a {
+	color: #000000;
+}
+.alert {
+	background-color: #F0A177;
+	padding: 8px;
+	margin-top: 10px;
+}

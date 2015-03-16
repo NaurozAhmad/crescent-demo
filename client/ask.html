@@ -1,0 +1,86 @@
+<template name="ask">
+	<div>
+		<form class="form-horizontal ask">
+			<div class="form-group">
+				<label for="user-type" class="col-sm-2 control-label">Blood Type</label>
+				<div class="col-sm-10">
+					<select class="form-control selType" name="bType">
+						<option value="">---Select Blood Type---</option>
+						{{#each bTypes}}
+							<option value="{{this}}">
+								{{this}}
+							</option>
+						{{/each}}
+					</select>
+				</div>
+			</div>
+			<div class="form-group pintGroup" style="display: none;">
+				<label for="pints" class="control-label col-sm-2">Number of Pints</label>
+				<div class="col-sm-10">
+					<select class="form-control pintSel" name="pintSel">
+						<option value="">---Select Required Pints---</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+					<div class="isPint">
+						{{isPint}}
+					</div>
+				</div>
+			</div>
+			<div class="patient-info" style="display: none">
+				<div class="form-group">
+					<label for="name" class="control-label col-sm-2">Name</label>
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="phone" class="control-label col-sm-2">Phone</label>
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="phone">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="time" class="control-label col-sm-2">Time</label>
+					<div class="col-sm-10">
+						<input type="time" class="form-control" name="time">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="date" class="control-label col-sm-2">Date</label>
+					<div class="col-sm-10">
+						<input type="date" name="date" class="form-control">
+					</div>
+				</div>
+				{{isHospitalSelected}}
+				<div class="form-group">
+					<label for="hospital" class="control-label col-sm-2">Location</label>
+					<div class="col-sm-10">
+						<select class="form-control selHos" name="hospital">
+							<option value="">---Select Hospital---</option>
+							<option value="LRH">Lady Reading Hospital (LRH)</option>
+							<option value="RMI">Rehman Medical Institute (RMI)</option>
+							<option value="CMH">Combined Military Hospital (CMH)</option>
+							<option value="NWH">North-West Hospital (NWH)</option>
+							<option value="KTH">Khyber Teaching Hospital</option>
+							<option value="CBH">Cantonment Board Hospital (CBH)</option>
+						</select>
+						<div id="map-canvas">
+							   {{#if connected}}<img src="http://maps.googleapis.com/maps/api/staticmap?center={{loc.lat}},{{loc.lng}}&zoom={{loc.zoom}}&size={{loc.dim}}&maptype=roadmap&markers=color:blue%7C{{loc.lat}},{{loc.lng}}" />{{/if}}
+						</div>
+					</div>
+				</div>
+
+				<input style="margin-top: 3em; margin-bottom: 2em;" class="btn btn-default btn-block" type="submit" value="Ask">
+			</div>
+		</form>
+	</div>
+</template>

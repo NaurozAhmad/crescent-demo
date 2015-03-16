@@ -1,0 +1,39 @@
+<template name="register">
+	<form class="form-horizontal main">
+		<div class="form-group">
+			<label for="name" class="control-label col-sm-2">Name</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="name">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="control-label col-sm-2">Password</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="password" name="password">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="confirm" class="control-label col-sm-2">Confirm</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="password" name="confirm">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="user-type" class="col-sm-2 control-label">Blood Type</label>
+			<div class="col-sm-10">
+				<select class="form-control selType" name="bType">
+					<option value="">---Select Blood Type---</option>
+					<option value="O+">O+</option>
+					<option value="O-">O-</option>
+					<option value="A+">A+</option>
+					<option value="A-">A-</option>
+					<option value="B+">B+</option>
+					<option value="B-">B-</option>
+					<option value="AB+">AB+</option>
+					<option value="AB-">AB-</option>
+				</select>
+			</div>
+		</div>
+		<input style="margin-top: 3em;" class="btn btn-default btn-block" type="submit" value="Submit">
+	</form>
+</template>

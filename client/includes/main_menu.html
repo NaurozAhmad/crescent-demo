@@ -1,0 +1,17 @@
+<template name="mainMenu">
+<div>
+	
+	{{#if currentUser}}
+		{{username}}
+		<a href="#" class="logout">Logout</a>
+	{{/if}}
+	<ul class="text-center">
+		{{#if currentUser}}
+		{{else}}
+			<li><a href="{{pathFor 'login'}}">Log In</a></li>
+		{{/if}}
+		<li><a href="{{pathFor 'register'}}">Register</a></li>
+		<li><a href="{{pathFor 'ask'}}">Ask</a></li>
+	</ul>
+</div>
+</template>
